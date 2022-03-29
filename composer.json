@@ -6,11 +6,17 @@
     "support": {
       "source": "https://centerfordigitalediting.org"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
     "version": "1.0.0",
     "require": {
         "composer/installers": "~1.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.0",
+        "drupal/admin_toolbar": "^3.1",
         "drupal/ckeditor_specialchars": "^1.2",
         "drupal/config_direct_save": "^1.2",
         "drupal/config_split": "^1.7",
