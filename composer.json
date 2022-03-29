@@ -6,13 +6,7 @@
     "support": {
       "source": "https://centerfordigitalediting.org"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "require": {
         "composer/installers": "~1.0",
         "cweagans/composer-patches": "^1.7",
@@ -37,5 +31,11 @@
         "drupal/upgrade_status": "^3.11",
         "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
     }
 }
