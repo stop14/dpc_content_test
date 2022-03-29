@@ -1,12 +1,13 @@
 {
-    "name": "dpc/dpc_content",
-    "type": "drupal-custom-module",
+    "name": "stop14/dpc_content_test",
+    "type": "drupal-module",
     "description": "Standard configuration of editorial sites used in the University of Virginia Digital Publishing Cooperative",
     "license": "GPL-2.0-or-later",
     "support": {
       "source": "https://centerfordigitalediting.org"
     },
     "require": {
+        "composer/installers": "~1.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.0",
         "drupal/ckeditor_specialchars": "^1.2",
