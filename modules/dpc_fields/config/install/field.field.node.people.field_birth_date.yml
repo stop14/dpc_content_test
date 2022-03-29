@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_date
+    - node.type.people
+  module:
+    - datetime_range
+id: node.people.field_birth_date
+field_name: field_birth_date
+entity_type: node
+bundle: people
+label: 'Birth Date'
+description: 'The birth date of the individual if known. Approximations should be entered as a range. May 1784 would be entered as 1 May 1784 and 30 May 1784.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

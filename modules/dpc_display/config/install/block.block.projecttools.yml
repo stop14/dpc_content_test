@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.project-tools
+  module:
+    - system
+    - user
+  theme:
+    - bartik
+id: projecttools
+theme: bartik
+region: sidebar_first
+weight: -15
+provider: null
+plugin: 'system_menu_block:project-tools'
+settings:
+  id: 'system_menu_block:project-tools'
+  label: 'Project Tools'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      editor: editor
+      project_admin: project_admin

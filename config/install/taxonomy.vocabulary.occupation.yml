@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Occupation
+vid: occupation
+description: 'Occupations and roles held by individuals'
+weight: 0

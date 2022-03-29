@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geographic_location
+    - node.type.places
+    - taxonomy.vocabulary.geographic_location
+id: node.places.field_geographic_location
+field_name: field_geographic_location
+entity_type: node
+bundle: places
+label: 'Geographic Location'
+description: 'Taxonomy list identifying the general geographic location of a place. Multiple selections will allow for locations like territories that may cross multiple modern states/provinces. Terms are managed by the cooperative.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      geographic_location: geographic_location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

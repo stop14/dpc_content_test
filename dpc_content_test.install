@@ -1,0 +1,182 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the profilename install profile.
+ */
+
+
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function dpc_content_install() {}
+
+/**
+ * Update all config files.
+ */
+function dpc_content_update_8001() {
+  \Drupal::service("module_installer")->install(["diff"]);
+  \Drupal::service("module_installer")->install(["feeds"]);
+  \Drupal::service("module_installer")->install(["feeds_ex"]);
+  \Drupal::service("module_installer")->install(["feeds_tamper"]);
+  \Drupal::service("module_installer")->install(["tamper"]);
+  
+  $prefixes = [
+    'system.menu',
+    'node.type',
+    'core.base_field_override.node',
+    'core.date_format',
+    'field.storage.paragraph',
+    'paragraphs.paragraphs_type',
+    'field.field.paragraph',
+    'field.storage.node',
+    'taxonomy.vocabulary',
+    'field.storage.taxonomy_term',
+    'field.field.taxonomy_term',
+    'field.field.node',
+    'field.storage.user',
+    'field.field.user',
+    'field.settings',
+    'core.entity_form_display',
+    'core.entity_view_display',
+    'feeds.feed_type',
+    'filter.format',
+    'editor.editor',
+    'language.content_settings',
+    'linkit.linkit_profile',
+    'search_api.index',
+    'search_api.server',
+    'search_api.settings',
+    'key.key',
+    'shortcut.set',
+    'system.action',
+    'system.menu',
+    'user.role',
+    'views.view'
+  ];
+  $results = [];
+  foreach ($prefixes as $prefix) {
+    $results[$prefix] = _update_or_install_config($prefix);
+  }
+  $return = '';
+  foreach ($results as $prefix => $result) {
+    $return .= "\n$prefix:\n";
+    foreach ($result as $key => $ids) {
+      $return .= "$key: " . implode(', ', $ids) . "\n";
+    }
+  }
+  if (function_exists('drush_log')) {
+    drush_log($return, \Psr\Log\LogLevel::WARNING);
+  }
+  return $return;
+}
+
+/** install initial rest configuration and update search api**/
+function dpc_content_update_8002() {
+  \Drupal::service("module_installer")->install(["restui"]);
+  
+  $prefixes = [
+      'search_api.index',
+      'search_api.server',
+      'search_api.settings',
+      'rest.resource'
+  ];
+  $results = [];
+  foreach ($prefixes as $prefix) {
+    $results[$prefix] = _update_or_install_config($prefix);
+  }
+  $return = '';
+  foreach ($results as $prefix => $result) {
+    $return .= "\n$prefix:\n";
+    foreach ($result as $key => $ids) {
+      $return .= "$key: " . implode(', ', $ids) . "\n";
+    }
+  }
+  if (function_exists('drush_log')) {
+    drush_log($return, \Psr\Log\LogLevel::WARNING);
+  }
+  return $return;
+}
+
+/** install entity print module and bring in updated views and block configs**/
+function dpc_content_update_8003() {
+  \Drupal::service("module_installer")->install(["entity_print"]);
+  \Drupal::service("module_installer")->install(["content_moderation"]);
+  
+  $prefixes = [
+      'core.entity_view_display',
+      'core.entity_form_display',
+      'editor.editor',
+      'workflows.workflow',
+      'views.view',
+      'block.block',
+      'feeds.feed_type'
+  ];
+  $results = [];
+  foreach ($prefixes as $prefix) {
+    $results[$prefix] = _update_or_install_config($prefix);
+  }
+  $return = '';
+  foreach ($results as $prefix => $result) {
+    $return .= "\n$prefix:\n";
+    foreach ($result as $key => $ids) {
+      $return .= "$key: " . implode(', ', $ids) . "\n";
+    }
+  }
+  if (function_exists('drush_log')) {
+    drush_log($return, \Psr\Log\LogLevel::WARNING);
+  }
+  return $return;
+}
+
+
+/**
+ * Update or install config entities from config/install files.
+ *
+ * @see \Drupal\config_update\ConfigReverter::import
+ * @see \Drupal\config_update\ConfigReverter::revert
+ *
+ * @param string $prefix
+ *   The prefix for YAML files in find, like 'field.storage.node'
+ */
+function _update_or_install_config($prefix) {
+  $updated = [];
+  $created = [];
+  /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manger */
+  $config_manger = \Drupal::service('config.manager');
+  $files = glob(__DIR__ . '/config/install/' . $prefix . '.*.yml');
+  foreach ($files as $file) {
+    $raw = file_get_contents($file);
+    $value = \Drupal\Component\Serialization\Yaml::decode($raw);
+    if (!is_array($value)) {
+      throw new \RuntimeException(sprintf('Invalid YAML file %s'), $file);
+    }
+    // Lazy hack here since that code ignores the file extension.
+    $type = $config_manger->getEntityTypeIdByName(basename($file));
+    $entity_manager = $config_manger->getEntityManager();
+    $definition = $entity_manager->getDefinition($type);
+    $id_key = $definition->getKey('id');
+    $id = $value[$id_key];
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorage $entity_storage */
+    $entity_storage = $entity_manager->getStorage($type);
+    $entity = $entity_storage->load($id);
+    if ($entity) {
+      $entity = $entity_storage->updateFromStorageRecord($entity, $value);
+      $entity->save();
+      $updated[] = $id;
+    }
+    else {
+      $entity = $entity_storage->createFromStorageRecord($value);
+      $entity->save();
+      $created[] = $id;
+    }
+  }
+  return [
+    'updated' => $updated,
+    'created' => $created,
+  ];
+}

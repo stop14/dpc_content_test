@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.places.field_additional_names
+    - field.field.node.places.field_description
+    - field.field.node.places.field_geographic_location
+    - field.field.node.places.field_geonames
+    - field.field.node.places.field_internal_notes
+    - field.field.node.places.field_other_authority_records
+    - field.field.node.places.field_place_type
+    - node.type.places
+  module:
+    - user
+id: node.places.teaser
+targetEntityType: node
+bundle: places
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_additional_names: true
+  field_description: true
+  field_geographic_location: true
+  field_geonames: true
+  field_internal_notes: true
+  field_other_authority_records: true
+  field_place_type: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_citations
+    - node.type.people
+  module:
+    - text
+id: node.people.field_citations
+field_name: field_citations
+entity_type: node
+bundle: people
+label: Citations
+description: 'Source citations for an individual''s biographical details.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

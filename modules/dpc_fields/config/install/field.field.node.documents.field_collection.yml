@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collection
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_collection
+field_name: field_collection
+entity_type: node
+bundle: documents
+label: Collection
+description: 'The collection identified by the source repository that the object belongs to. Example: African-American Band Music & Recordings, 1883 - 1923'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

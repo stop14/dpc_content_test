@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Object Type'
+vid: object_type
+description: 'The type of object being described. This is mapped to the Library of Congress Marc Genre list and populated by the cooperative.'
+weight: 0

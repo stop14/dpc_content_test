@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geonames
+    - node.type.places
+  module:
+    - link
+id: node.places.field_geonames
+field_name: field_geonames
+entity_type: node
+bundle: places
+label: Geonames
+description: 'Link to the GeoNames (https://www.geonames.org) authority record in the format of https://www.geonames.org/id-number. The <b>Link Text</b> is the visible, clickable text of a link. It should be as short as possible, while still being meaningful out of context. Ex: GeoNames Record'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

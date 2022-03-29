@@ -1,0 +1,633 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documents.feeds_item
+    - field.field.node.documents.field_accession_number
+    - field.field.node.documents.field_account_owner
+    - field.field.node.documents.field_all_organizations
+    - field.field.node.documents.field_all_people
+    - field.field.node.documents.field_author
+    - field.field.node.documents.field_collection
+    - field.field.node.documents.field_creator
+    - field.field.node.documents.field_date
+    - field.field.node.documents.field_dateline
+    - field.field.node.documents.field_document_body
+    - field.field.node.documents.field_document_extra
+    - field.field.node.documents.field_document_top
+    - field.field.node.documents.field_enclosure
+    - field.field.node.documents.field_featured
+    - field.field.node.documents.field_footnote
+    - field.field.node.documents.field_general
+    - field.field.node.documents.field_head
+    - field.field.node.documents.field_headnote
+    - field.field.node.documents.field_image_filename
+    - field.field.node.documents.field_image_url
+    - field.field.node.documents.field_internal_notes
+    - field.field.node.documents.field_keywords
+    - field.field.node.documents.field_language
+    - field.field.node.documents.field_manuscript_type
+    - field.field.node.documents.field_marginalia
+    - field.field.node.documents.field_needs_review
+    - field.field.node.documents.field_object_type
+    - field.field.node.documents.field_physical_description
+    - field.field.node.documents.field_place_of_author
+    - field.field.node.documents.field_place_of_recipient
+    - field.field.node.documents.field_places
+    - field.field.node.documents.field_post_script
+    - field.field.node.documents.field_recipient
+    - field.field.node.documents.field_response
+    - field.field.node.documents.field_salutation
+    - field.field.node.documents.field_signature
+    - field.field.node.documents.field_source
+    - field.field.node.documents.field_source_note
+    - field.field.node.documents.field_speaker
+    - field.field.node.documents.field_themes
+    - field.field.node.documents.field_version_type
+    - field.field.node.documents.field_volume
+    - node.type.documents
+    - workflows.workflow.document_workflow
+  module:
+    - content_moderation
+    - datetime_range
+    - field_group
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_transcription:
+      children:
+        - field_headnote
+        - field_head
+        - field_document_top
+        - field_dateline
+        - field_salutation
+        - field_document_body
+        - field_signature
+        - field_post_script
+        - field_document_extra
+        - field_source_note
+        - field_footnote
+        - field_marginalia
+      label: Transcription
+      region: content
+      parent_name: group_document_information
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: 'All transcription fields needed to display the document text.'
+        required_fields: false
+    group_related_documents:
+      children:
+        - field_enclosure
+        - field_response
+        - field_general
+      label: 'Related Documents'
+      region: content
+      parent_name: group_document_information
+      weight: 11
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_document_information:
+      children:
+        - group_general
+        - group_metadata
+        - group_transcription
+        - group_related_documents
+        - group_media
+        - group_workflow
+      label: 'Document Information'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_metadata:
+      children:
+        - field_object_type
+        - field_language
+        - field_keywords
+        - field_themes
+        - field_sender
+        - field_author
+        - field_place_of_author
+        - field_recipient
+        - field_place_of_recipient
+        - field_creator
+        - field_speaker
+        - field_account_owner
+        - field_all_people
+        - field_all_organizations
+        - field_places
+        - field_version_type
+      label: Metadata
+      region: content
+      parent_name: group_document_information
+      weight: 9
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_general:
+      children:
+        - field_featured
+        - field_needs_review
+        - field_accession_number
+        - field_date
+        - field_manuscript_type
+        - field_physical_description
+        - field_source
+        - field_collection
+        - field_volume
+        - field_internal_notes
+      label: General
+      region: content
+      parent_name: group_document_information
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_media:
+      children:
+        - field_image_url
+        - field_image_filename
+      label: Media
+      region: content
+      parent_name: group_document_information
+      weight: 12
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_workflow:
+      children:
+        - moderation_state
+        - uid
+        - created
+        - path
+      label: Workflow
+      region: content
+      parent_name: group_document_information
+      weight: 13
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.documents.default
+targetEntityType: node
+bundle: documents
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_accession_number:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_account_owner:
+    type: entity_reference_autocomplete
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_all_organizations:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_all_people:
+    type: entity_reference_autocomplete
+    weight: 20
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_author:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_collection:
+    type: text_textarea
+    weight: 16
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_creator:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: daterange_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dateline:
+    type: text_textarea
+    weight: 39
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+  field_document_body:
+    type: text_textarea
+    weight: 41
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_document_extra:
+    type: text_textarea
+    weight: 44
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_document_top:
+    type: text_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_enclosure:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_footnote:
+    type: text_textarea
+    weight: 46
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_general:
+    type: entity_reference_autocomplete
+    weight: 23
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_head:
+    type: text_textarea
+    weight: 37
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_headnote:
+    type: text_textarea
+    weight: 36
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_filename:
+    type: text_textarea
+    weight: 20
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_url:
+    type: link_default
+    weight: 19
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_internal_notes:
+    type: text_textarea
+    weight: 18
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_keywords:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_language:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_manuscript_type:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_marginalia:
+    type: text_textarea
+    weight: 48
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_needs_review:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_object_type:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_physical_description:
+    type: text_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_place_of_author:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_place_of_recipient:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_places:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_post_script:
+    type: text_textarea
+    weight: 43
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_recipient:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_response:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_salutation:
+    type: text_textarea
+    weight: 40
+    region: content
+    settings:
+      rows: 1
+      placeholder: ''
+    third_party_settings: {  }
+  field_signature:
+    type: text_textarea
+    weight: 42
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_source:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_source_note:
+    type: text_textarea
+    weight: 45
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_speaker:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_themes:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_version_type:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_volume:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  feeds_item: true
+  langcode: true
+  promote: true
+  sticky: true

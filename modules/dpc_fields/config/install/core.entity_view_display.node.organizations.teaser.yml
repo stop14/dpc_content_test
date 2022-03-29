@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.organizations.field_citations
+    - field.field.node.organizations.field_description
+    - field.field.node.organizations.field_featured
+    - field.field.node.organizations.field_internal_notes
+    - field.field.node.organizations.field_organization_type
+    - field.field.node.organizations.field_other_authority_records
+    - field.field.node.organizations.field_phst_id
+    - field.field.node.organizations.field_related_people
+    - field.field.node.organizations.field_related_place
+    - field.field.node.organizations.field_viaf
+    - node.type.organizations
+  module:
+    - user
+id: node.organizations.teaser
+targetEntityType: node
+bundle: organizations
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_citations: true
+  field_description: true
+  field_featured: true
+  field_internal_notes: true
+  field_organization_type: true
+  field_other_authority_records: true
+  field_phst_id: true
+  field_related_people: true
+  field_related_place: true
+  field_viaf: true
+  langcode: true
+  search_api_excerpt: true

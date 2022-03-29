@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_filename
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_image_filename
+field_name: field_image_filename
+entity_type: node
+bundle: documents
+label: 'Image Filename'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

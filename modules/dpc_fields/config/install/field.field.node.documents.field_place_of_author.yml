@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_place_of_author
+    - node.type.documents
+    - node.type.places
+id: node.documents.field_place_of_author
+field_name: field_place_of_author
+entity_type: node
+bundle: documents
+label: 'Place of Author'
+description: 'The place from which an author is writing. To use this field, the place will need to be created as a place record first.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      places: places
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.digital_publishing
+  module:
+    - ckeditor
+format: digital_publishing
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Tools
+          items:
+            - Source
+            - Paste
+            - PasteFromWord
+            - Cut
+            - Copy
+            - Undo
+            - Redo
+        -
+          name: Formatting
+          items:
+            - Format
+            - Styles
+            - Bold
+            - Underline
+            - Italic
+            - Strike
+            - Subscript
+            - Superscript
+            - HorizontalRule
+            - RemoveFormat
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - Outdent
+            - Indent
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - SpecialChar
+            - Table
+  plugins:
+    stylescombo:
+      styles: "p.indent|Paragraph Indent\r\np.hanging-indent-1|Hanging Indent 1\r\np.hanging-indent-2|Hanging Indent 2\r\np.hanging-indent-3|Hanging Indent 3\r\nspan.elongated-line|Elongated Line\r\nspan.highlight-yellow|Highlight Yellow\r\nspan.small-caps|Small Caps\r\ntable.table-center|Table Center\r\ntable.table-right|Table Right"
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: project_entities
+    language:
+      language_list: un
+    specialchars:
+      characters: "⅌\r\n£\r\n§\r\n¶\r\no\r\nƒ\r\n℔\r\n✓\r\n☜\r\n☞\r\n☛\r\n→\r\n←\r\n†\r\n‡\r\n※\r\n⁂\r\n∴\r\n◇\r\n✠\r\n⊕\r\nṇ\r\nẋ\r\n⟌\r\n☉\r\n☿\r\n♀\r\n☽\r\n☾\r\n♂\r\n♃\r\n♄\r\n□\r\n✻\r\n☌\r\nm̃\r\nLd͠p"
+      replace: 0
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

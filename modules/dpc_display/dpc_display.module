@@ -1,0 +1,19 @@
+<?php
+
+
+use Drupal\Core\Url;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Config\Entity\ConfigEntityStorage;
+
+/**
+ * Implements hook_help().
+ */
+function dpc_displays_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.dpc_displays':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Explanation for the Digital Publishing out of the box displays of content.') . '</p>';
+      return $output;
+  }
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Language
+vid: language
+description: 'The language of a document/object'
+weight: 0

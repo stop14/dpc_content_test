@@ -1,0 +1,266 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.documents.field_accession_number
+    - field.field.node.documents.field_author
+    - field.field.node.documents.field_collection
+    - field.field.node.documents.field_date
+    - field.field.node.documents.field_dateline
+    - field.field.node.documents.field_document_body
+    - field.field.node.documents.field_footnote
+    - field.field.node.documents.field_head
+    - field.field.node.documents.field_object_type
+    - field.field.node.documents.field_recipient
+    - field.field.node.documents.field_salutation
+    - field.field.node.documents.field_signature
+    - field.field.node.documents.field_source
+    - node.type.documents
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers: {  }
+label: 'Document CSV'
+id: csv
+description: ''
+help: 'An example of an import for documents from csv file.'
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: documents
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  names:
+    value: names
+    label: names
+    machine_name: names
+  relation:
+    value: relation
+    label: relation
+    machine_name: relation
+  fgea_mapdata_id:
+    value: 'FGEA:mapData/@id'
+    label: 'FGEA:mapData/@id'
+    machine_name: fgea_mapdata_id
+  fgea_mapdata_fgea_author:
+    value: 'FGEA:mapData/FGEA:Author'
+    label: 'FGEA:mapData/FGEA:Author'
+    machine_name: fgea_mapdata_fgea_author
+  text:
+    value: text
+    label: text
+    machine_name: text
+  fgea_mapdata_nid:
+    value: 'FGEA:mapData/@nid'
+    label: 'FGEA:mapData/@nid'
+    machine_name: fgea_mapdata_nid
+  id:
+    value: ID
+    label: ID
+    machine_name: id
+  names2:
+    value: Names
+    label: Names
+    machine_name: names2
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+  start_date:
+    value: 'Start Date'
+    label: 'Start Date'
+    machine_name: start_date
+  end_date:
+    value: 'End Date'
+    label: 'End Date'
+    machine_name: end_date
+  author:
+    value: Author
+    label: Author
+    machine_name: author
+  sender:
+    value: Sender
+    label: Sender
+    machine_name: sender
+  recipient:
+    value: Recipient
+    label: Recipient
+    machine_name: recipient
+  source:
+    value: Source
+    label: Source
+    machine_name: source
+  collection:
+    value: Collection
+    label: Collection
+    machine_name: collection
+  object_type:
+    value: 'Object Type'
+    label: 'Object Type'
+    machine_name: object_type
+  head:
+    value: Head
+    label: Head
+    machine_name: head
+  dateline:
+    value: Dateline
+    label: Dateline
+    machine_name: dateline
+  salutation:
+    value: Salutation
+    label: Salutation
+    machine_name: salutation
+  document_body:
+    value: 'Document Body'
+    label: 'Document Body'
+    machine_name: document_body
+  signature:
+    value: Signature
+    label: Signature
+    machine_name: signature
+  footnotes:
+    value: Footnotes
+    label: Footnotes
+    machine_name: footnotes
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+  internal_notes:
+    value: 'Internal Notes'
+    label: 'Internal Notes'
+    machine_name: internal_notes
+mappings:
+  -
+    target: field_accession_number
+    map:
+      value: id
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_date
+    map:
+      value: start_date
+      end_value: end_date
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: field_author
+    map:
+      target_id: author
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_recipient
+    map:
+      target_id: recipient
+    settings:
+      language: null
+      reference_by: title
+      autocreate: false
+      feeds_item: false
+  -
+    target: field_source
+    map:
+      target_id: source
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_collection
+    map:
+      value: collection
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_object_type
+    map:
+      target_id: object_type
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_head
+    map:
+      value: head
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_dateline
+    map:
+      value: dateline
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_salutation
+    map:
+      value: salutation
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_document_body
+    map:
+      value: document_body
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_signature
+    map:
+      value: signature
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_footnote
+    map:
+      value: footnotes
+    settings:
+      language: ''
+      format: digital_publishing
+  -
+    target: field_internal_notes
+    map:
+      value: internal_notes
+    settings:
+      language: ''
+      format: digital_publishing

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Source
+vid: source
+description: 'The source/repository for the object (Library of Congress, private dealer, etc.)'
+weight: 0

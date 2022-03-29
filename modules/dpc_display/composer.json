@@ -1,0 +1,14 @@
+{
+    "name": "dpc/dpc_display",
+    "type": "drupal-custom-module",
+    "description": "Out of the box vies and blocks for editorial projects",
+    "license": "GPL-2.0-or-later",
+    "support": {
+      "source": "https://centerfordigitalediting.org"
+    },
+    "require": {
+        "drupal/views_bulk_edit": "^2.6",
+        "drupal/views_bulk_operations": "^3.12",
+        "drupal/views_data_export": "^1.0"
+    }
+}

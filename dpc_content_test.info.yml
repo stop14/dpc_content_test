@@ -1,0 +1,82 @@
+name: Digital Publishing Content Test
+description: 'A testing version of the University of Virginia Digital Publishing Cooperative DPC Content module'
+package: Custom
+
+type: module
+core_version_requirement: '^8.8 || ^9'
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - admin_toolbar
+  - admin_toolbar_search
+  - automated_cron
+  - basic_auth
+  - big_pipe
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - ckeditor_specialchars
+  - color
+  - comment
+  - config
+  - config_direct_save
+  - contact
+  - content_moderation
+  - contextual
+  - datetime
+  - datetime_range
+  - dblog
+  - diff
+  - dynamic_page_cache
+  - editor
+  - entity_print
+  - entity_print_views
+  - entity_reference_revisions
+  - facets
+  - feeds
+  - field
+  - field_group
+  - field_ui
+  - file
+  - filter
+  - hal
+  - help
+  - history
+  - image
+  - key
+  - language
+  - link
+  - linkit
+  - menu_link_content
+  - menu_ui
+  - migrate
+  - node
+  - options
+  - page_cache
+  - path
+  - path_alias
+  - quickedit
+  - rdf
+  - rest
+  - search_api
+  - search_api_db
+  - search_api_exclude_entity
+  - search_api_opensolr
+  - search_api_opensolr_security
+  - search_api_solr
+  - search_api_solr_admin
+  - serialization
+  - shortcut
+  - system
+  - taxonomy
+  - text
+  - toolbar
+  - tour
+  - update
+  - user
+  - views
+  - views_ui
+  - workflows
+

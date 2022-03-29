@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.project_admin
+  module:
+    - user
+id: user_add_role_action.project_admin
+label: 'Add the Project Admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: project_admin

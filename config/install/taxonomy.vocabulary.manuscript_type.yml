@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Manuscript Type'
+vid: manuscript_type
+description: 'This is populated by the cooperative.'
+weight: 0

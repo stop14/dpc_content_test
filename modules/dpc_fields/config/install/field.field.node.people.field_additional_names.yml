@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_names
+    - node.type.people
+  module:
+    - text
+id: node.people.field_additional_names
+field_name: field_additional_names
+entity_type: node
+bundle: people
+label: 'Additional Names'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Geographic Location'
+vid: geographic_location
+description: 'Hierarchical list identifying the general geographic location of a place. This is maintained by the cooperative.'
+weight: 0

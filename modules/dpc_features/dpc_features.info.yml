@@ -1,0 +1,17 @@
+name: Digital Publishing Features
+description: 'Primary settings & features for sites using the University of Virginia Digital Publishing Cooperative data model'
+package: Custom
+
+type: module
+core_version_requirement: '^8.8 || ^9'
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - dpc_content
+  - dpc_fields
+  - feeds
+  - feeds_ex
+  - feeds_tamper
+  - tamper
+  - views_bulk_edit

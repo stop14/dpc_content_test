@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.people.title
+    - node.type.people
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      e60d3471-0169-4b5a-83fb-1b18ac8f757d:
+        separator: '|'
+        limit: null
+        uuid: e60d3471-0169-4b5a-83fb-1b18ac8f757d
+        plugin: explode
+        source: names
+        weight: 0
+        label: Explode
+label: 'People CSV'
+id: people_csv
+description: 'Import people from a css file'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: people
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  names:
+    value: Names
+    label: Names
+    machine_name: names
+mappings:
+  -
+    target: title
+    map:
+      value: names
+    settings:
+      language: null
+    unique:
+      value: '1'

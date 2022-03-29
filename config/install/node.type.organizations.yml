@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Organizations
+type: organizations
+description: 'The organizations mentioned within the edition. Use the name format provided by an authority record such as the Virtual International Authority File http://viaf.org when possible.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

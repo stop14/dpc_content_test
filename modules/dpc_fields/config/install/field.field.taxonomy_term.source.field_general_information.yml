@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_general_information
+    - taxonomy.vocabulary.source
+  module:
+    - text
+id: taxonomy_term.source.field_general_information
+field_name: field_general_information
+entity_type: taxonomy_term
+bundle: source
+label: 'General Information'
+description: 'General information regarding the source including but not limited to location, website, primary contact information, permissions, etc. The information collected here is determined by the project.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

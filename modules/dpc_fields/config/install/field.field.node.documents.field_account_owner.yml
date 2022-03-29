@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_account_owner
+    - node.type.documents
+    - node.type.organizations
+    - node.type.people
+id: node.documents.field_account_owner
+field_name: field_account_owner
+entity_type: node
+bundle: documents
+label: 'Account Owner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      organizations: organizations
+      people: people
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: organizations
+field_type: entity_reference

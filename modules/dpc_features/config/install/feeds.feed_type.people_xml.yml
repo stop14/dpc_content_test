@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.people.title
+    - node.type.people
+  module:
+    - feeds_ex
+    - node
+label: 'People XML'
+id: people_xml
+description: 'Import people from xml file'
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: xml
+parser_configuration:
+  sources:
+    fgea_mapdata_fgea_recipient:
+      label: 'FGEA:mapData/FGEA:Recipient'
+      value: 'FGEA:mapData/FGEA:Recipient'
+      raw: false
+      inner: false
+  context:
+    value: //div2
+  source_encoding:
+    - auto
+  display_errors: false
+  debug_mode: false
+  line_limit: 100
+  use_tidy: false
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: people
+  langcode: en
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  fgea_mapdata_fgea_recipient:
+    value: 'FGEA:mapData/FGEA:Recipient'
+    label: 'FGEA:mapData/FGEA:Recipient'
+    machine_name: fgea_mapdata_fgea_recipient
+mappings:
+  -
+    target: title
+    map:
+      value: fgea_mapdata_fgea_recipient
+    settings:
+      language: ''
+    unique:
+      value: '1'

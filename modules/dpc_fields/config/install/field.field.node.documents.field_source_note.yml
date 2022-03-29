@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_note
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_source_note
+field_name: field_source_note
+entity_type: node
+bundle: documents
+label: 'Source Note'
+description: 'The source note of the document. Ex: document type (ALS, LS, D, etc.) followed by the Repository and Collection name. Follows this format: "ALS, ViMtvL: Historic Manuscript Collection."'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

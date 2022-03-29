@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Place Type'
+vid: place_type
+description: 'The type of place it is. This is populated by the cooperative.'
+weight: 0

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_physical_description
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_physical_description
+field_name: field_physical_description
+entity_type: node
+bundle: documents
+label: 'Physical Description'
+description: 'The physical description of the object: ink spills, torn pages, number of pages, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

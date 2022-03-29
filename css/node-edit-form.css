@@ -1,0 +1,13 @@
+
+.layout-region-node-main {
+    width: 100% !important;
+}
+
+.layout-region-node-secondary {
+    float: none !important;
+    width: 100% !important;
+}
+
+#edit-title-wrapper {
+margin-left: 2% !important;
+}

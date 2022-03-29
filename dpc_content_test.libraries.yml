@@ -1,0 +1,14 @@
+general_styles:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: {}
+      '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css': {type: external}
+ckeditor_styles:
+  css:
+    theme:
+      css/ckeditor-styles.css: {}
+node_edit_form:
+  css:
+    theme:
+      css/node-edit-form.css: {}      

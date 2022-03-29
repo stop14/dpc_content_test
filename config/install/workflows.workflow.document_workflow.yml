@@ -1,0 +1,136 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.documents
+  module:
+    - content_moderation
+id: document_workflow
+label: 'Document workflow'
+type: content_moderation
+type_settings:
+  states:
+    annotated:
+      label: Annotated
+      weight: 1
+      published: false
+      default_revision: false
+    cataloged:
+      label: Cataloged
+      weight: -3
+      published: false
+      default_revision: false
+    digitized:
+      label: Digitized
+      weight: -4
+      published: false
+      default_revision: false
+    draft:
+      label: Transcribed
+      weight: -2
+      published: false
+      default_revision: false
+    proof_read:
+      label: 'Proof read'
+      weight: -1
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 2
+      published: true
+      default_revision: true
+    tandem_read:
+      label: 'Tandem read'
+      weight: 0
+      published: false
+      default_revision: false
+  transitions:
+    add_basic_metadata:
+      label: 'Add basic metadata'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: cataloged
+      weight: -3
+    create_new_draft:
+      label: 'Initial Transcription'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: draft
+      weight: -2
+    create_new_record:
+      label: 'Create New Record'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: digitized
+      weight: -4
+    document_annotated:
+      label: 'Document Annotated'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: annotated
+      weight: 1
+    document_tandem_read:
+      label: 'Document Tandem Read'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: tandem_read
+      weight: 0
+    publish:
+      label: 'Final Check and Publish'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: published
+      weight: 2
+    transcription_check:
+      label: 'Transcription Check'
+      from:
+        - annotated
+        - cataloged
+        - digitized
+        - draft
+        - proof_read
+        - published
+        - tandem_read
+      to: proof_read
+      weight: -1
+  entity_types:
+    node:
+      - documents
+  default_moderation_state: digitized

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Gender
+vid: gender
+description: 'The gender of an individual. List is managed by the cooperative.'
+weight: 0

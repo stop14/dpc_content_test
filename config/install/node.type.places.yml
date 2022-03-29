@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Places
+type: places
+description: 'Places mentioned in the projects documents. Use the name format provided by an authority record such as the GeoNames database (geonames.org) when possible.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

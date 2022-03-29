@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_marc_code
+    - taxonomy.vocabulary.source
+  module:
+    - text
+id: taxonomy_term.source.field_marc_code
+field_name: field_marc_code
+entity_type: taxonomy_term
+bundle: source
+label: 'MARC Code'
+description: 'The Library of Congress MARC Code for the source https://www.loc.gov/marc/organizations/. Codes are also available for sources in Canada, the UK, Germany, and Estonia.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

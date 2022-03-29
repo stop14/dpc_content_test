@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_source_type
+    - taxonomy.vocabulary.source
+    - taxonomy.vocabulary.source_type
+id: taxonomy_term.source.field_source_type
+field_name: field_source_type
+entity_type: taxonomy_term
+bundle: source
+label: 'Source Type'
+description: 'The type of source. Repository, Auction House, etc. Terms are managed by the cooperative.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      source_type: source_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

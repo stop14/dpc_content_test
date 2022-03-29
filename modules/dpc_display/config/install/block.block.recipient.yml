@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recipient
+  module:
+    - facets
+    - system
+  theme:
+    - bartik
+id: recipient
+theme: bartik
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'facet_block:recipient'
+settings:
+  id: 'facet_block:recipient'
+  label: Recipient
+  label_display: visible
+  provider: facets
+  block_id: recipient
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /search

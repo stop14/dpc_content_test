@@ -1,0 +1,47 @@
+/** CKEditor custom styles defined by the UVA Digital Publishing Cooperative **/
+
+.indent {
+    text-indent: 30px;
+}
+
+.hanging-indent-1 {
+    padding-left: 30px;
+    text-indent: -30px;
+}
+
+.hanging-indent-2 {
+    padding-left: 60px;
+    text-indent: -60px;
+}
+
+.hanging-indent-3 {
+    padding-left: 90px;
+    text-indent: -90px;
+}
+
+.elongated-line {
+    letter-spacing: -5px;
+}
+
+.highlight-yellow {
+    background-color: #FFFF00;
+}
+
+.small-caps {
+    font-variant: small-caps;
+}
+
+.table-center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.table-right {
+    width: 75%;
+    height: auto;
+    margin-left: 0px;
+    margin-right: auto;
+    float: right;
+}
+

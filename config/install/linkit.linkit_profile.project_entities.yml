@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+label: 'Project Entities'
+id: project_entities
+description: ''
+matchers:
+  d8189530-e8ac-4423-97bf-90864ebec0be:
+    id: 'entity:node'
+    uuid: d8189530-e8ac-4423-97bf-90864ebec0be
+    settings:
+      metadata: 'Entities identified by the project (people, organizations, and places)'
+      bundles:
+        organizations: organizations
+        people: people
+        places: places
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: true
+    weight: 0

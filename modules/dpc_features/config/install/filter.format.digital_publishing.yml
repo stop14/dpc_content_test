@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - linkit
+name: 'Digital Publishing'
+format: digital_publishing
+weight: -10
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang target data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h1 id align class=""> <h2 id align class=""> <h3 id align class=""> <h4 id align class=""> <h5 id align class=""> <h6 id align class=""> <img src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <u> <s> <sup> <sub> <caption> <tbody> <thead> <tfoot> <th> <td align> <tr> <drupal-entity alt title data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <div style class=""> <br> <p style class=" indent hanging-indent-1 hanging-indent-2 hanging-indent-3"> <span align style class=" elongated-line highlight-yellow small-caps"> <table class=" table-center table-right"> <hr>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -11
+    settings:
+      title: false

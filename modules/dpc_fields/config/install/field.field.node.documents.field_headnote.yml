@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headnote
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_headnote
+field_name: field_headnote
+entity_type: node
+bundle: documents
+label: Headnote
+description: 'Explanatory note or summary of the document.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general
+    - node.type.documents
+id: node.documents.field_general
+field_name: field_general
+entity_type: node
+bundle: documents
+label: General
+description: 'Documents related to the current document based on editor''s decision.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documents: documents
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

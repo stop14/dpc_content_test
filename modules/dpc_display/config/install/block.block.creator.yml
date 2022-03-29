@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.creator
+  module:
+    - facets
+    - system
+  theme:
+    - bartik
+id: creator
+theme: bartik
+region: sidebar_first
+weight: -2
+provider: null
+plugin: 'facet_block:creator'
+settings:
+  id: 'facet_block:creator'
+  label: Creator
+  label_display: visible
+  provider: facets
+  block_id: creator
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /search

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.speaker
+  module:
+    - facets
+    - system
+  theme:
+    - bartik
+id: speaker
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:speaker'
+settings:
+  id: 'facet_block:speaker'
+  label: Speaker
+  label_display: visible
+  provider: facets
+  block_id: speaker
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /search

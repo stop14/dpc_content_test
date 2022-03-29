@@ -1,0 +1,132 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.digital_publishing
+    - node.type.article
+    - node.type.documents
+    - node.type.organizations
+    - node.type.page
+    - node.type.people
+    - node.type.places
+    - taxonomy.vocabulary.keywords
+    - taxonomy.vocabulary.manuscript_type
+    - taxonomy.vocabulary.source
+    - taxonomy.vocabulary.volume
+    - workflows.workflow.document_workflow
+    - workflows.workflow.editorial
+    - workflows.workflow.id_workflow
+  module:
+    - contact
+    - content_moderation
+    - contextual
+    - file
+    - filter
+    - node
+    - path
+    - quickedit
+    - shortcut
+    - system
+    - taxonomy
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer menu'
+  - 'administer shortcuts'
+  - 'change own username'
+  - 'create article content'
+  - 'create documents content'
+  - 'create organizations content'
+  - 'create page content'
+  - 'create people content'
+  - 'create places content'
+  - 'create terms in keywords'
+  - 'create terms in manuscript_type'
+  - 'create terms in source'
+  - 'create terms in volume'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any article content'
+  - 'delete any documents content'
+  - 'delete any organizations content'
+  - 'delete any page content'
+  - 'delete any people content'
+  - 'delete any places content'
+  - 'delete article revisions'
+  - 'delete documents revisions'
+  - 'delete organizations revisions'
+  - 'delete own article content'
+  - 'delete own documents content'
+  - 'delete own organizations content'
+  - 'delete own page content'
+  - 'delete own people content'
+  - 'delete own places content'
+  - 'delete page revisions'
+  - 'delete people revisions'
+  - 'delete places revisions'
+  - 'delete terms in keywords'
+  - 'delete terms in manuscript_type'
+  - 'delete terms in source'
+  - 'delete terms in volume'
+  - 'edit any article content'
+  - 'edit any documents content'
+  - 'edit any organizations content'
+  - 'edit any page content'
+  - 'edit any people content'
+  - 'edit any places content'
+  - 'edit own article content'
+  - 'edit own documents content'
+  - 'edit own organizations content'
+  - 'edit own page content'
+  - 'edit own people content'
+  - 'edit own places content'
+  - 'edit terms in keywords'
+  - 'edit terms in manuscript_type'
+  - 'edit terms in source'
+  - 'edit terms in volume'
+  - 'link to any page'
+  - 'revert article revisions'
+  - 'revert documents revisions'
+  - 'revert organizations revisions'
+  - 'revert page revisions'
+  - 'revert people revisions'
+  - 'revert places revisions'
+  - 'switch shortcut sets'
+  - 'use document_workflow transition add_basic_metadata'
+  - 'use document_workflow transition create_new_draft'
+  - 'use document_workflow transition create_new_record'
+  - 'use document_workflow transition document_annotated'
+  - 'use document_workflow transition document_tandem_read'
+  - 'use document_workflow transition publish'
+  - 'use document_workflow transition transcription_check'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use id_workflow transition create_new_draft'
+  - 'use id_workflow transition fact_check'
+  - 'use id_workflow transition publish'
+  - 'use text format digital_publishing'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view documents revisions'
+  - 'view latest version'
+  - 'view organizations revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view people revisions'
+  - 'view places revisions'

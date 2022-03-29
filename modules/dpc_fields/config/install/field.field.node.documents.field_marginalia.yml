@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_marginalia
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_marginalia
+field_name: field_marginalia
+entity_type: node
+bundle: documents
+label: Marginalia
+description: 'Marks, scribbles, comments, doodles, etc. made in the margins.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+name: Digital Publishing Fields
+description: 'Out of the box fields for editorial sites used in the University of Virginia Digital Publishing Cooperative'
+package: Custom
+
+type: module
+core_version_requirement: '^8.8 || ^9'
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - comment
+  - datetime
+  - datetime_range
+  - dpc_content
+  - feeds
+  - link
+  - node
+  - taxonomy
+  - text
+  - user

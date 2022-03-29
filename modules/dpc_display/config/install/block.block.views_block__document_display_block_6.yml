@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.document_display
+  module:
+    - node
+    - user
+    - views
+  theme:
+    - bartik
+id: views_block__document_display_block_6
+theme: bartik
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:document_display-block_6'
+settings:
+  id: 'views_block:document_display-block_6'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      editor: editor
+      project_admin: project_admin
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      documents: documents

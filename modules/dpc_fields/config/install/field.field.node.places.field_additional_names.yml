@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_names
+    - node.type.places
+  module:
+    - text
+id: node.places.field_additional_names
+field_name: field_additional_names
+entity_type: node
+bundle: places
+label: 'Additional Names'
+description: 'Alternative names that a place is called by.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

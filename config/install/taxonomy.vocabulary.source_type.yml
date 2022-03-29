@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Source Type'
+vid: source_type
+description: 'This is populated by the cooperative.'
+weight: 0

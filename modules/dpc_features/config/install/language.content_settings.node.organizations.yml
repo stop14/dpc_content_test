@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.organizations
+id: node.organizations
+target_entity_type_id: node
+target_bundle: organizations
+default_langcode: site_default
+language_alterable: false

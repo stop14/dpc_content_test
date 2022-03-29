@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_top
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_document_top
+field_name: field_document_top
+entity_type: node
+bundle: documents
+label: 'Document Top'
+description: 'Something extra that appears at the top of the page (confidential, for your eyes only, copy, etc). Sometimes also referred to as lagniappe.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

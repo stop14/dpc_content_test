@@ -1,0 +1,31 @@
+name: Digital Publishing Displays
+description: 'Out of the box blocks and views for editorial sites used in the University of Virginia Digital Publishing Cooperative'
+package: Custom
+
+type: module
+core_version_requirement: '^8.8 || ^9'
+
+# Required modules
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - content_moderation
+  - csv_serialization
+  - datetime
+  - datetime_range
+  - dpc_content
+  - dpc_features
+  - dpc_fields
+  - entity_print_views
+  - link
+  - node
+  - rest
+  - search
+  - search_api
+  - serialization
+  - system
+  - taxonomy
+  - user
+  - views
+  - views_bulk_edit
+  - views_bulk_operations 
+  - views_data_export

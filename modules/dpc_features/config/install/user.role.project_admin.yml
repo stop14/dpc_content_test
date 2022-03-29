@@ -1,0 +1,242 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.digital_publishing
+    - node.type.article
+    - node.type.documents
+    - node.type.organizations
+    - node.type.page
+    - node.type.people
+    - node.type.places
+    - taxonomy.vocabulary.keywords
+    - taxonomy.vocabulary.manuscript_type
+    - taxonomy.vocabulary.source
+    - taxonomy.vocabulary.volume
+    - workflows.workflow.document_workflow
+    - workflows.workflow.editorial
+    - workflows.workflow.id_workflow
+  module:
+    - admin_toolbar_search
+    - block
+    - block_content
+    - comment
+    - contact
+    - content_moderation
+    - contextual
+    - entity_print_views
+    - facets
+    - feeds
+    - feeds_tamper
+    - field_ui
+    - file
+    - filter
+    - image
+    - linkit
+    - node
+    - path
+    - quickedit
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+    - views_bulk_edit
+    - views_ui
+    - workflows
+id: project_admin
+label: 'Project Admin'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access feed overview'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer blocks'
+  - 'administer comment display'
+  - 'administer comment fields'
+  - 'administer comment form display'
+  - 'administer comment types'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer contact_message form display'
+  - 'administer content types'
+  - 'administer display modes'
+  - 'administer facets'
+  - 'administer feeds'
+  - 'administer feeds_feed display'
+  - 'administer feeds_feed fields'
+  - 'administer feeds_feed form display'
+  - 'administer feeds_tamper'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer linkit profiles'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer shortcuts'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer users'
+  - 'administer views'
+  - 'administer workflows'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'clear csv feeds'
+  - 'clear document_xml_import feeds'
+  - 'clear people_csv feeds'
+  - 'clear people_xml feeds'
+  - 'create article content'
+  - 'create csv feeds'
+  - 'create document_xml_import feeds'
+  - 'create documents content'
+  - 'create organizations content'
+  - 'create page content'
+  - 'create people content'
+  - 'create people_csv feeds'
+  - 'create people_xml feeds'
+  - 'create places content'
+  - 'create terms in keywords'
+  - 'create terms in manuscript_type'
+  - 'create terms in source'
+  - 'create terms in volume'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any documents content'
+  - 'delete any organizations content'
+  - 'delete any page content'
+  - 'delete any people content'
+  - 'delete any places content'
+  - 'delete article revisions'
+  - 'delete csv feeds'
+  - 'delete document_xml_import feeds'
+  - 'delete documents revisions'
+  - 'delete organizations revisions'
+  - 'delete own article content'
+  - 'delete own documents content'
+  - 'delete own organizations content'
+  - 'delete own page content'
+  - 'delete own people content'
+  - 'delete own places content'
+  - 'delete page revisions'
+  - 'delete people revisions'
+  - 'delete people_csv feeds'
+  - 'delete places revisions'
+  - 'delete terms in keywords'
+  - 'delete terms in manuscript_type'
+  - 'delete terms in source'
+  - 'delete terms in volume'
+  - 'edit any article content'
+  - 'edit any documents content'
+  - 'edit any organizations content'
+  - 'edit any page content'
+  - 'edit any people content'
+  - 'edit any places content'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own documents content'
+  - 'edit own organizations content'
+  - 'edit own page content'
+  - 'edit own people content'
+  - 'edit own places content'
+  - 'edit terms in keywords'
+  - 'edit terms in manuscript_type'
+  - 'edit terms in source'
+  - 'edit terms in volume'
+  - 'entity print views access'
+  - 'import csv feeds'
+  - 'import document_xml_import feeds'
+  - 'import people_csv feeds'
+  - 'import people_xml feeds'
+  - 'link to any page'
+  - 'post comments'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert documents revisions'
+  - 'revert organizations revisions'
+  - 'revert page revisions'
+  - 'revert people revisions'
+  - 'revert places revisions'
+  - 'schedule_import csv feeds'
+  - 'schedule_import document_xml_import feeds'
+  - 'schedule_import people_csv feeds'
+  - 'schedule_import people_xml feeds'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'switch shortcut sets'
+  - 'tamper csv'
+  - 'tamper document_xml_import'
+  - 'tamper people_csv'
+  - 'tamper people_xml'
+  - 'unlock csv feeds'
+  - 'unlock document_xml_import feeds'
+  - 'unlock people_csv feeds'
+  - 'unlock people_xml feeds'
+  - 'update csv feeds'
+  - 'update document_xml_import feeds'
+  - 'update people_csv feeds'
+  - 'update people_xml feeds'
+  - 'use admin toolbar search'
+  - 'use document_workflow transition add_basic_metadata'
+  - 'use document_workflow transition create_new_draft'
+  - 'use document_workflow transition create_new_record'
+  - 'use document_workflow transition document_annotated'
+  - 'use document_workflow transition document_tandem_read'
+  - 'use document_workflow transition publish'
+  - 'use document_workflow transition transcription_check'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use id_workflow transition create_new_draft'
+  - 'use id_workflow transition fact_check'
+  - 'use id_workflow transition publish'
+  - 'use text format digital_publishing'
+  - 'use views bulk edit'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view csv feeds'
+  - 'view document_xml_import feeds'
+  - 'view documents revisions'
+  - 'view latest version'
+  - 'view organizations revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view people revisions'
+  - 'view people_csv feeds'
+  - 'view people_xml feeds'
+  - 'view places revisions'
+  - 'view the administration theme'
+  - 'view user email addresses'

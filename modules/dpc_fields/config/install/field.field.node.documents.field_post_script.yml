@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_script
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_post_script
+field_name: field_post_script
+entity_type: node
+bundle: documents
+label: 'Post Script'
+description: 'The postscript to a document.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

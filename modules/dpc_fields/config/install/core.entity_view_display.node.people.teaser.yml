@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.people.feeds_item
+    - field.field.node.people.field_additional_names
+    - field.field.node.people.field_birth_date
+    - field.field.node.people.field_birth_place
+    - field.field.node.people.field_citations
+    - field.field.node.people.field_death_date
+    - field.field.node.people.field_death_place
+    - field.field.node.people.field_description
+    - field.field.node.people.field_featured
+    - field.field.node.people.field_first_name
+    - field.field.node.people.field_gender
+    - field.field.node.people.field_internal_notes
+    - field.field.node.people.field_last_name
+    - field.field.node.people.field_occupation
+    - field.field.node.people.field_other_authority_records
+    - field.field.node.people.field_phst_id
+    - field.field.node.people.field_viaf
+    - node.type.people
+  module:
+    - user
+id: node.people.teaser
+targetEntityType: node
+bundle: people
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  feeds_item: true
+  field_additional_names: true
+  field_birth_date: true
+  field_birth_place: true
+  field_citations: true
+  field_death_date: true
+  field_death_place: true
+  field_description: true
+  field_featured: true
+  field_first_name: true
+  field_gender: true
+  field_internal_notes: true
+  field_last_name: true
+  field_occupation: true
+  field_other_authority_records: true
+  field_phst_id: true
+  field_viaf: true
+  langcode: true
+  search_api_excerpt: true

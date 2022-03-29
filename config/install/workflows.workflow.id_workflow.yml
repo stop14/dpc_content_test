@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.organizations
+    - node.type.people
+    - node.type.places
+  module:
+    - content_moderation
+id: id_workflow
+label: 'ID Workflow'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    fact_check:
+      label: 'Fact Check'
+      weight: -1
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - fact_check
+        - published
+      to: draft
+      weight: -2
+    fact_check:
+      label: 'Fact Check'
+      from:
+        - draft
+        - fact_check
+        - published
+      to: fact_check
+      weight: -1
+    publish:
+      label: Publish
+      from:
+        - draft
+        - fact_check
+        - published
+      to: published
+      weight: 0
+  entity_types:
+    node:
+      - organizations
+      - people
+      - places
+  default_moderation_state: draft

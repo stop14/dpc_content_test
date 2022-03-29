@@ -1,0 +1,32 @@
+<?php
+
+
+use Drupal\Core\Url;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Config\Entity\ConfigEntityStorage;
+
+/**
+ * Implements hook_help().
+ */
+function dpc_content_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.dpc_content':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Explanation for the Digital Publishing Content Types being used.') . '</p>';
+      return $output;
+  }
+}
+
+function dpc_content_preprocess_html(&$variables) {
+    $variables['#attached']['library'][] = 'dpc_content/ckeditor_styles';
+    $variables['#attached']['library'][] = 'dpc_content/general_styles';
+}
+
+function dpc_content_theme_registry_alter(&$theme_registry) {
+  $theme_registry['node_edit_form']['path'] = drupal_get_path('module', 'dpc_content') . '/templates';
+}
+
+function dpc_content_ckeditor_css_alter(&$css, $editor) {
+  $css[] = drupal_get_path('module', 'dpc_content') . '/css/ckeditor-styles.css';
+}

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.document_display
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__document_display_block_5
+theme: bartik
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:document_display-block_5'
+settings:
+  id: 'views_block:document_display-block_5'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      documents: documents

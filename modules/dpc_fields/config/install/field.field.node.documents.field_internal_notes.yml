@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_notes
+    - node.type.documents
+  module:
+    - text
+id: node.documents.field_internal_notes
+field_name: field_internal_notes
+entity_type: node
+bundle: documents
+label: 'Internal Notes'
+description: 'Notes from project staff regarding various aspects of the document. Adding dates and staff initials can help keep this field organized.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
